@@ -1,5 +1,6 @@
 import axios from "axios";
 import envs from "../config";
+import { types } from "../store/reducers";
 
 //functions
 //fetch a list of users from API
@@ -9,13 +10,13 @@ export function fetchUserList() {
       .get(`${envs.API_URL}/api/users`)
       .then((response) => {
         dispatch({
-          type: "userList",
+          type: types.USERLIST,
           payload: response.data,
         });
       })
       .catch((error) => {
         dispatch({
-          type: "error",
+          type: types.ERROR,
           payload: error,
         });
       });
@@ -23,19 +24,21 @@ export function fetchUserList() {
 }
 
 //add new user in the database from the API
-export function addNewUser(username, password) {
+export function addNewUser(name, email, password, phone) {
   return function (dispatch) {
     return axios
       .post(`${envs.API_URL}/api/users/add`, {
-        username: username,
+        name: name,
+        email: email,
+        phone: phone,
         password: password,
       })
       .then((response) => {
-        console.log(response);
+        return Promise.resolve(response.data.message);
       })
       .catch((error) => {
         dispatch({
-          type: "error",
+          type: types.ERROR,
           payload: error,
         });
       });
@@ -46,17 +49,13 @@ export function addNewUser(username, password) {
 export function deleteUser(idUser) {
   return function (dispatch) {
     return axios
-      .delete(`${envs.API_URL}/api/users/delete/${idUser}`, {
-        data: {
-          userID: idUser,
-        },
-      })
+      .delete(`${envs.API_URL}/api/users/delete/${idUser}`)
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
         dispatch({
-          type: "error",
+          type: types.ERROR,
           payload: error,
         });
       });

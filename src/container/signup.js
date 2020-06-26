@@ -13,7 +13,13 @@ export class SignUp extends React.Component {
             backgroundColor: "#8388B8",
           }}
         >
-          <div style={{ marginLeft: "150px", paddingTop: "20px" }}>
+          <div
+            style={{
+              display: "flex",
+              paddingTop: "20px",
+              justifyContent: "center",
+            }}
+          >
             <SignupForm />
           </div>
         </div>

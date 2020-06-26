@@ -1,23 +1,29 @@
 const initialState = {
   userList: [],
   apiToken: "",
-  error: ""
+  error: "",
+};
+
+export const types = {
+  USERLIST: "userList",
+  APITOKEN: "apiToken",
+  ERROR: "error",
 };
 
 function rootReducer(state = initialState, action) {
-  if (action.type === "userList") {
+  if (action.type === types.USERLIST) {
     return Object.assign({}, state, {
-      userList: action.payload
+      userList: action.payload,
     });
   }
-  if (action.type === "error") {
+  if (action.type === types.ERROR) {
     return Object.assign({}, state, {
-      error: action.payload.response
+      error: action.payload.response,
     });
   }
-  if (action.type === "apiToken") {
+  if (action.type === types.APITOKEN) {
     return Object.assign({}, state, {
-      apiToken: action.payload
+      apiToken: action.payload,
     });
   }
   return state;

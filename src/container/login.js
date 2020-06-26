@@ -33,7 +33,34 @@ export class Login extends React.Component {
               />
             </div>
           </div>
-          <div style={{ display: "flex", padding: "0px 80px" }}>
+          <div
+            style={{
+              display: "flex",
+              padding: "0px 80px",
+              flexDirection: "column",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "50px",
+                marginBottom: "50px",
+              }}
+            >
+              <h1
+                style={{
+                  fontFamily: "Notable",
+                  color: "#568D62",
+                  letterSpacing: 3,
+                  fontSize: "25px",
+                  textAlign: "center",
+                  width: "80%",
+                }}
+              >
+                Welcome to the Real Word of Leave a Message
+              </h1>
+            </div>
             <div style={{ alignSelf: "center" }}>
               <Userform />
             </div>
