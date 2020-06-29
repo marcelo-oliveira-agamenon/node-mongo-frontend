@@ -1,4 +1,5 @@
 import React from "react";
+import ContactComp from "../components/contactComponent";
 
 export class Dashboard extends React.Component {
   render() {
@@ -10,6 +11,9 @@ export class Dashboard extends React.Component {
           <h1 style={{ backgroundColor: "#ffffff" }}>
             CHAT - WELCOME TO YOUR DASHBOARD
           </h1>
+        </div>
+        <div>
+          <ContactComp />
         </div>
       </div>
     );

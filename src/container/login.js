@@ -58,7 +58,7 @@ export class Login extends React.Component {
                   width: "80%",
                 }}
               >
-                Welcome to the Real Word of Leave a Message
+                Welcome to the Real World of Leave a Message
               </h1>
             </div>
             <div style={{ alignSelf: "center" }}>

@@ -1,8 +1,4 @@
-const initialState = {
-  userList: [],
-  apiToken: "",
-  error: "",
-};
+import initialState from "../ducks/state";
 
 export const types = {
   USERLIST: "userList",
@@ -23,7 +19,7 @@ function rootReducer(state = initialState, action) {
   }
   if (action.type === types.APITOKEN) {
     return Object.assign({}, state, {
-      apiToken: action.payload,
+      apiToken: action.payload.authToken,
     });
   }
   return state;
