@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
       title: 'Chat App Hobby',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          accentColor: Color.fromRGBO(0, 82, 129, 1),
-          primaryColor: Color.fromRGBO(219, 235, 243, 1)),
+        accentColor: Color.fromRGBO(0, 82, 129, 1),
+        primaryColor: Color.fromRGBO(219, 235, 243, 1),
+      ),
       home: LoginScreen(),
     );
   }
