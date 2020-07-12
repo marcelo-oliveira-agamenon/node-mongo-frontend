@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignupScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
-    final bottomPadd = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Column(
         children: <Widget>[
           Image(
             image: AssetImage("assets/image/ChatME.png"),
-            height: 260,
-          ),
-          Divider(
-            color: Color.fromRGBO(55, 79, 164, 1),
-            thickness: 52,
-          ),
-          SizedBox(
-            height: 50,
+            height: 230,
           ),
           Container(
             decoration: BoxDecoration(boxShadow: [
@@ -53,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Row(
                             children: <Widget>[
                               Text(
-                                "USUÁRIO",
+                                "NOME",
                                 style: TextStyle(
                                   fontSize: 15,
                                   letterSpacing: 1,
@@ -85,14 +77,92 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       SizedBox(
-                        height: 22,
+                        height: 17,
                       ),
                       Column(
                         children: <Widget>[
                           Row(
                             children: <Widget>[
                               Text(
-                                "SENHA",
+                                "EMAIL",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  fontFamily: "Open Sans",
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 40,
+                            child: TextField(
+                              decoration: new InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(55),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: Color.fromRGBO(0, 82, 192, 1),
+                                    width: 0.9,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 17,
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                "TELEFONE",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  fontFamily: "Open Sans",
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 40,
+                            child: TextField(
+                              decoration: new InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(55),
+                                  ),
+                                  borderSide: BorderSide(
+                                    color: Color.fromRGBO(0, 82, 192, 1),
+                                    width: 0.9,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 17,
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                "PASSWORD",
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,
@@ -136,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               onPressed: () {},
                               child: Text(
-                                "ENTRAR",
+                                "CADASTRAR",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 17,
@@ -155,12 +225,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(55),
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/signup');
+                                Navigator.pop(context);
                               },
                               child: Text(
-                                "CRIAR CONTA",
+                                "JÁ TEM CONTA? LOGIN",
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   fontSize: 17,
                                   letterSpacing: 1.1,
                                   fontFamily: "Open Sans",
@@ -180,7 +250,6 @@ class _LoginScreenState extends State<LoginScreen> {
           )
         ],
       ),
-      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 }
