@@ -1,0 +1,75 @@
+import styled from "styled-components";
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 250px;
+  background-color: #d6e9bf;
+  padding: 25px 45px;
+
+  label {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-family: Open Sans, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 12px;
+    text-transform: uppercase;
+  }
+
+  input {
+    padding: 8px 7px;
+    border-radius: 7px;
+    border-style: none;
+    outline: none;
+    opacity: 0.44;
+
+    :focus {
+      border-style: solid;
+      border-color: green;
+      border-width: 1.5px;
+    }
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+
+  button {
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #92bf76;
+    font-family: Open Sans, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    border-style: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 4px 1px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 210px;
+
+    :hover {
+      background-color: #667d57;
+    }
+  }
+
+  h3 {
+    font-family: Open Sans, sans-serif;
+    letter-spacing: 2px;
+    font-size: 15px;
+    margin-top: 22px;
+    cursor: pointer;
+    text-align: center;
+
+    :hover {
+      font-size: 16px;
+    }
+  }
+`;
