@@ -8,6 +8,10 @@ export const Form = styled.form`
   background-color: #d6e9bf;
   padding: 25px 45px;
 
+  @media (max-width: 600px) {
+    width: 310px;
+  }
+
   label {
     margin-top: 10px;
     margin-bottom: 8px;
@@ -72,4 +76,10 @@ export const ButtonContainer = styled.div`
       font-size: 16px;
     }
   }
+`;
+
+export const LoadingContainer = styled.div`
+  margin-top: 5px;
+  align-self: center;
+  margin-bottom: -6px;
 `;

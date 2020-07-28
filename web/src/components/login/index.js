@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login } from "../../ducks/auth";
 import { useHistory } from "react-router-dom";
-import { Form, ButtonContainer } from "./styles";
+import { Form, ButtonContainer, LoadingContainer } from "./styles";
+import Loading from "react-loading";
 
 const mapStateToProps = (state) => {
   return {
@@ -14,16 +15,18 @@ const mapStateToProps = (state) => {
 function Userform(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (username.length === 0) {
-      return 0;
+      return null;
     }
     if (password.length === 0) {
-      return 0;
+      return null;
     }
+    setLoading(true);
     props.login(username, password).then((token) => {
       if (token) {
         history.push("/dashboard");
@@ -31,6 +34,7 @@ function Userform(props) {
         setUsername("");
         setPassword("");
       }
+      setLoading(false);
     });
   };
 
@@ -49,6 +53,11 @@ function Userform(props) {
         onChange={(event) => setPassword(event.target.value)}
       />
       <ButtonContainer>
+        {loading ? (
+          <LoadingContainer>
+            <Loading type="spin" color="green" height={25} width={25} />
+          </LoadingContainer>
+        ) : null}
         <button type="submit">Login</button>
         <h3 onClick={() => history.push("/signup")}>Create a Account</h3>
       </ButtonContainer>

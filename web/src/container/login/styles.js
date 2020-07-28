@@ -10,11 +10,26 @@ export const ImageContainer = styled.div`
   background-color: #6ba8cb;
   display: flex;
   width: 100%;
+  max-width: 1000px;
+
+  @media (max-width: 860px) {
+    display: none;
+  }
 
   img {
-    width: 400px;
-    height: 390px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 390px;
+    height: 100%;
     margin-left: 200px;
+
+    @media (max-width: 1300px) {
+      margin-left: 50px;
+    }
+
+    @media (max-width: 1150px) {
+      margin-left: 0px;
+    }
   }
 
   div {
@@ -26,6 +41,10 @@ export const LoginComponent = styled.div`
   display: flex;
   padding: 0px 80px;
   flex-direction: column;
+
+  @media (max-width: 600px) {
+    padding: 0 0;
+  }
 `;
 
 export const TitleContainer = styled.div`

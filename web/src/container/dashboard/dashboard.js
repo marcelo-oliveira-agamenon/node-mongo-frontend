@@ -1,5 +1,5 @@
 import React from "react";
-import ContactComp from "../components/contactComponent";
+import ContactComp from "../../components/dashboard/contactComponent";
 
 export class Dashboard extends React.Component {
   render() {
