@@ -10,6 +10,10 @@ export const Form = styled.div`
 
 export const Div1 = styled.div`
   padding: 40px 100px 0px 100px;
+
+  @media (max-width: 600px) {
+    padding: 10px 20px 0px 20px;
+  }
 `;
 
 export const TitleDiv = styled.div`
@@ -23,6 +27,10 @@ export const TitleDiv = styled.div`
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: lighter;
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 `;
 

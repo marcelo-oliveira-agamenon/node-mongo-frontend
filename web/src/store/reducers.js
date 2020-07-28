@@ -14,7 +14,7 @@ function rootReducer(state = initialState, action) {
   }
   if (action.type === types.ERROR) {
     return Object.assign({}, state, {
-      error: action.payload.response,
+      error: action.payload,
     });
   }
   if (action.type === types.APITOKEN) {

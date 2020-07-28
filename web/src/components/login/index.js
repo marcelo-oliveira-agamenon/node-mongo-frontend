@@ -8,7 +8,6 @@ import Loading from "react-loading";
 const mapStateToProps = (state) => {
   return {
     apiToken: state.apiToken,
-    error: state.error,
   };
 };
 
@@ -27,15 +26,21 @@ function Userform(props) {
       return null;
     }
     setLoading(true);
-    props.login(username, password).then((token) => {
-      if (token) {
-        history.push("/dashboard");
-      } else {
-        setUsername("");
-        setPassword("");
-      }
-      setLoading(false);
-    });
+    props
+      .login(username, password)
+      .then((token) => {
+        if (token) {
+          history.push("/dashboard");
+        } else {
+          setUsername("");
+          setPassword("");
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        window.alert(error.message);
+        setLoading(false);
+      });
   };
 
   return (

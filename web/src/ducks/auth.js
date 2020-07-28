@@ -20,8 +20,9 @@ export function login(username, password) {
       .catch((error) => {
         dispatch({
           type: types.ERROR,
-          payload: error,
+          payload: error.response.data,
         });
+        return Promise.reject(error.response.data);
       });
   };
 }
