@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addNewUser } from "../../ducks/user";
 import { Form, Div1, TitleDiv, ButtonDiv, InputContainer } from "./styles";
+import Avatar from "../../assets/avatar.png";
 
 function Signup(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [roles, setRoles] = useState();
+  const [avatar, setAvatar] = useState("");
   const history = useHistory();
 
   const handleSubmit = (event) => {
@@ -33,12 +36,28 @@ function Signup(props) {
     });
   };
 
+  const handleFileImage = (event) => {
+    let image = URL.createObjectURL(event.target.files[0]);
+    setAvatar(image);
+  };
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
         <Div1>
           <TitleDiv>
             <h2>Signup</h2>
+            <img
+              src={avatar === "" ? Avatar : avatar}
+              alt="avatar"
+              onClick={() => document.getElementById("inputFile")?.click()}
+            />
+            <input
+              id="inputFile"
+              type="file"
+              accept="image/jpg/png/jpeg"
+              onChange={(event) => handleFileImage(event)}
+            />
           </TitleDiv>
           <InputContainer>
             <label>Name</label>
@@ -65,7 +84,18 @@ function Signup(props) {
             />
           </InputContainer>
           <InputContainer>
-            <label>Password</label>
+            <label>system permissions</label>
+            <select
+              value={roles}
+              onChange={(event) => setRoles(event.target.value)}
+            >
+              <option value=""></option>
+              <option value="user">Usuário</option>
+              <option value="admin">Admin</option>
+            </select>
+          </InputContainer>
+          <InputContainer>
+            <label>password</label>
             <input
               type="password"
               value={password}

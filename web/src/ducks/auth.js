@@ -15,6 +15,10 @@ export function login(username, password) {
           type: types.APITOKEN,
           payload: response.data,
         });
+        dispatch({
+          type: types.LOGGEDUSER,
+          payload: response.data.loggedUser,
+        });
         return Promise.resolve(response.data.authToken);
       })
       .catch((error) => {

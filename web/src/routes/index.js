@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 
 import Login from "../container/login/index";
-import Dashboard from "../container/dashboard/dashboard";
+import Dashboard from "../container/dashboard/index";
 import Signup from "../container/signup/signup";
 
 function Routes() {

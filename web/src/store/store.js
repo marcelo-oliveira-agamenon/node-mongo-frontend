@@ -8,7 +8,7 @@ import { types } from "../store/reducers";
 const persistConfig = {
   key: "authInfo",
   storage: storage,
-  whitelist: [types.APITOKEN],
+  whitelist: [types.APITOKEN, types.LOGGEDUSER],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
