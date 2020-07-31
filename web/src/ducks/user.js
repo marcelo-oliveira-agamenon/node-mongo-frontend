@@ -20,10 +20,8 @@ export function fetchUserList() {
           type: types.USERLIST,
           payload: response.data,
         });
-        console.log("data", response.data);
       })
       .catch((error) => {
-        console.log("error", error);
         dispatch({
           type: types.ERROR,
           payload: error,

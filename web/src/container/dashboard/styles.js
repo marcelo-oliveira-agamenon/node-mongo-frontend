@@ -12,6 +12,6 @@ export const DivHeader = styled.div`
 export const DivBody = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
+  justify-content: space-around;
   margin-top: 40px;
 `;

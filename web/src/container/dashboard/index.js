@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ContactComp from "../../components/dashboard/contactComponent";
+import ChatComp from "../../components/dashboard/chatComponent";
 import Header from "../../components/header/index";
 import { MainContainer, DivHeader, DivBody } from "./styles";
 
@@ -19,6 +20,7 @@ function Dashboard(props) {
         </DivHeader>
         <DivBody>
           <ContactComp />
+          <ChatComp />
         </DivBody>
       </MainContainer>
     </>

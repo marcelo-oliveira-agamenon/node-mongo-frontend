@@ -30,3 +30,18 @@ export function login(username, password) {
       });
   };
 }
+
+//Logout function
+export function logout() {
+  return function (dispatch) {
+    dispatch({
+      type: types.APITOKEN,
+      payload: "",
+    });
+    dispatch({
+      type: types.LOGGEDUSER,
+      payload: "",
+    });
+    return Promise.resolve("logged out");
+  };
+}
