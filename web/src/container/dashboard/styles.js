@@ -13,5 +13,5 @@ export const DivBody = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 30px;
 `;

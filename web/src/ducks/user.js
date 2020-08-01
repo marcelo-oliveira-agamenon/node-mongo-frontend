@@ -20,6 +20,7 @@ export function fetchUserList() {
           type: types.USERLIST,
           payload: response.data,
         });
+        return Promise.resolve(true);
       })
       .catch((error) => {
         dispatch({

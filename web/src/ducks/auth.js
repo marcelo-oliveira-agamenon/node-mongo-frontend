@@ -42,6 +42,6 @@ export function logout() {
       type: types.LOGGEDUSER,
       payload: "",
     });
-    return Promise.resolve("logged out");
+    return Promise.resolve(true);
   };
 }
