@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { SendOutlined } from "@ant-design/icons";
+import { fetchMessFromUserToUser, insertMsg } from "../../ducks/message";
 import { MainContainer2, ChatBox, MessageBar } from "./styles";
 
 function ChatComponent() {
@@ -26,4 +28,4 @@ function ChatComponent() {
   );
 }
 
-export default ChatComponent;
+export default connect(null, null)(ChatComponent);

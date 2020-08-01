@@ -31,6 +31,28 @@ export function login(username, password) {
   };
 }
 
+//Reset password function
+export function resetPassword(username, password) {
+  return function (dispatch) {
+    return axios
+      .post(`${envs.API_URL}/resetPassword`, {
+        email: username,
+        newPassword: password,
+      })
+      .then((response) => {
+        if (response.data.message === "Your password is updated")
+          return Promise.resolve(true);
+      })
+      .catch((error) => {
+        dispatch({
+          type: types.ERROR,
+          payload: error.response.data,
+        });
+        return Promise.reject(error.response.data);
+      });
+  };
+}
+
 //Logout function
 export function logout() {
   return function (dispatch) {

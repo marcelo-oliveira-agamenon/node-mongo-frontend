@@ -64,7 +64,10 @@ function Userform(props) {
           </LoadingContainer>
         ) : null}
         <button type="submit">Login</button>
-        <h3 onClick={() => history.push("/signup")}>Create a Account</h3>
+        <button onClick={() => history.push("/signup")}>
+          create a account
+        </button>
+        <h3 onClick={() => history.push("/resetPassword")}>Forgot password?</h3>
       </ButtonContainer>
     </Form>
   );

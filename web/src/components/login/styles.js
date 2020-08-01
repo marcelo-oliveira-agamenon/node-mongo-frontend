@@ -4,7 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 380px;
-  height: 250px;
+  height: 320px;
   background-color: #d6e9bf;
   padding: 25px 45px;
 
@@ -18,7 +18,7 @@ export const Form = styled.form`
     font-family: Open Sans, sans-serif;
     font-weight: normal;
     font-size: 16px;
-    margin-left: 12px;
+    margin-left: 18px;
     text-transform: uppercase;
   }
 
@@ -54,7 +54,7 @@ export const ButtonContainer = styled.div`
     border-style: none;
     outline: none;
     border-radius: 7px;
-    padding: 4px 1px;
+    padding: 4px 0px;
     font-size: 16px;
     cursor: pointer;
     width: 210px;
@@ -64,11 +64,33 @@ export const ButtonContainer = styled.div`
     }
   }
 
+  button:nth-child(2) {
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #dbebf3;
+    font-family: Open Sans, sans-serif;
+    font-weight: bold;
+    color: #000;
+    border-style: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 4px 1px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 210px;
+
+    :hover {
+      background-color: #667d57;
+      color: #ffffff;
+    }
+  }
+
   h3 {
     font-family: Open Sans, sans-serif;
     letter-spacing: 2px;
     font-size: 15px;
-    margin-top: 22px;
+    margin-top: 35px;
     cursor: pointer;
     text-align: center;
 

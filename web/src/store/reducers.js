@@ -3,6 +3,7 @@ import initialState from "../ducks/state";
 export const types = {
   USERLIST: "userList",
   LOGGEDUSER: "loggedUser",
+  FROMUSERTOUSER: "messFromUserToUser",
   APITOKEN: "apiToken",
   ERROR: "error",
 };
@@ -11,6 +12,11 @@ function rootReducer(state = initialState, action) {
   if (action.type === types.USERLIST) {
     return Object.assign({}, state, {
       userList: action.payload,
+    });
+  }
+  if (action.type === types.FROMUSERTOUSER) {
+    return Object.assign({}, state, {
+      messFromUserToUser: action.payload,
     });
   }
   if (action.type === types.ERROR) {

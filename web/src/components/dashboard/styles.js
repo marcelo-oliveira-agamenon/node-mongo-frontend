@@ -145,5 +145,6 @@ export const MessageBar = styled.div`
     border-radius: 30px;
     width: 38px;
     height: 38px;
+    cursor: pointer;
   }
 `;

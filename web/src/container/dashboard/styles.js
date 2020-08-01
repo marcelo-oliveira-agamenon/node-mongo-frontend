@@ -14,4 +14,9 @@ export const DivBody = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin-top: 30px;
+
+  @media (max-width: 700px) {
+    margin-top: 0px;
+    flex-direction: column-reverse;
+  }
 `;
