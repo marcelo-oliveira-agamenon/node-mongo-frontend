@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
   height: 100vh;
   background-color: #568d62;
+
+  @media (max-width: 1100px) {
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const DivHeader = styled.div`
@@ -15,8 +20,7 @@ export const DivBody = styled.div`
   justify-content: space-around;
   margin-top: 30px;
 
-  @media (max-width: 700px) {
-    margin-top: 0px;
+  @media (max-width: 1150px) {
     flex-direction: column-reverse;
   }
 `;

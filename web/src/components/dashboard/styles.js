@@ -10,6 +10,16 @@ export const MainContainer = styled.div`
   max-height: 550px;
   height: 100%;
   padding: 15px 15px;
+
+  @media (max-width: 1100px) {
+    align-self: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 700px) {
+    width: 80%;
+  }
 `;
 
 export const ListMainContainer = styled.div`
@@ -109,12 +119,25 @@ export const MainContainer2 = styled.div`
   height: 550px;
   background-color: #374fa4;
   padding: 15px 25px;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+    align-self: center;
+  }
+
+  @media (max-width: 700px) {
+    width: 80%;
+  }
 `;
 
 export const ChatBox = styled.div`
   height: 100%;
   max-height: 600px;
   background-color: #e5ebff;
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+  }
 `;
 
 export const MessageBar = styled.div`

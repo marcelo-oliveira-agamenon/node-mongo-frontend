@@ -4,6 +4,10 @@ export const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 700px) {
+    justify-content: space-evenly;
+  }
+
   div:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -17,6 +21,16 @@ export const MainContainer = styled.div`
     font-weight: bold;
     border-bottom: 1px solid #fff;
     margin-top: 40px;
+
+    @media (max-width: 1200px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: 16px;
+      margin-top: 25px;
+      border-bottom: none;
+    }
   }
 
   img {
@@ -24,6 +38,11 @@ export const MainContainer = styled.div`
     height: 80px;
     border-radius: 50px;
     box-shadow: 4px 4px 6px rgb(0, 0, 0, 0.56);
+
+    @media (max-width: 1000px) {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   p {
