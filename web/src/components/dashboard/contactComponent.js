@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { SearchOutlined } from "@ant-design/icons";
-import { fetchUserList } from "../../ducks/user";
+import { fetchUserList, selectionUser } from "../../ducks/user";
 import Loading from "react-loading";
 import {
   MainContainer,
@@ -51,6 +51,10 @@ function ContactComponent(props) {
     }
   };
 
+  const handleClick = (user) => {
+    props.selectionUser(user);
+  };
+
   return (
     <>
       <MainContainer>
@@ -59,6 +63,7 @@ function ContactComponent(props) {
           <input
             type="text"
             value={search}
+            placeholder="Search contact"
             onChange={(event) => handleSearchBar(event.target.value)}
           />
         </SearchBar>
@@ -70,7 +75,7 @@ function ContactComponent(props) {
           ) : (
             arrayUsers.map((user) => {
               return (
-                <ListContainer key={user._id}>
+                <ListContainer key={user._id} onClick={() => handleClick(user)}>
                   <CardContact>
                     <img src={user.imageUrl} alt="avatar" />
                     <div>
@@ -90,4 +95,5 @@ function ContactComponent(props) {
 
 export default connect(mapStateToProps, {
   fetchUserList,
+  selectionUser,
 })(ContactComponent);

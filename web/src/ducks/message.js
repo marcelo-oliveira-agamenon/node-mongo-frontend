@@ -54,7 +54,7 @@ export function insertMsg(toUser, fromUser, body) {
         }
       )
       .then((response) => {
-        return Promise.resolve(response.data.message);
+        return Promise.resolve(true);
       })
       .catch((error) => {
         dispatch({

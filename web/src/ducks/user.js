@@ -117,3 +117,16 @@ export function deleteUser(idUser) {
       });
   };
 }
+
+export function selectionUser(user) {
+  return function (dispatch) {
+    if (user) {
+      dispatch({
+        type: types.SELECTEDUSER,
+        payload: user,
+      });
+    } else {
+      return Promise.reject("No user selected");
+    }
+  };
+}

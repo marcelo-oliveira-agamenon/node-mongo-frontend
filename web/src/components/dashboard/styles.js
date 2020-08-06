@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
   height: 100%;
   padding: 15px 15px;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1150px) {
     align-self: center;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -68,6 +68,7 @@ export const CardContact = styled.div`
   margin-bottom: 22px;
   padding: 8px 0px;
   border-radius: 4px;
+  cursor: pointer;
 
   :hover {
     animation-name: toLeft;
@@ -131,9 +132,11 @@ export const MainContainer2 = styled.div`
 `;
 
 export const ChatBox = styled.div`
+  display: flex;
   height: 100%;
   max-height: 600px;
   background-color: #e5ebff;
+  padding: 15px 15px;
 
   @media (max-width: 800px) {
     max-width: 100%;
@@ -169,5 +172,30 @@ export const MessageBar = styled.div`
     width: 38px;
     height: 38px;
     cursor: pointer;
+  }
+`;
+
+export const MsgContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 15px;
+  width: 140px;
+  padding: 12px 9px;
+  border-radius: 10px;
+
+  h2 {
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    align-self: center;
+  }
+
+  p {
+    font-family: Open Sans, sans-serif;
+    font-size: 12px;
+    color: #909090;
+    align-self: center;
   }
 `;

@@ -4,6 +4,7 @@ export const types = {
   USERLIST: "userList",
   LOGGEDUSER: "loggedUser",
   FROMUSERTOUSER: "messFromUserToUser",
+  SELECTEDUSER: "selectedUser",
   APITOKEN: "apiToken",
   ERROR: "error",
 };
@@ -17,6 +18,11 @@ function rootReducer(state = initialState, action) {
   if (action.type === types.FROMUSERTOUSER) {
     return Object.assign({}, state, {
       messFromUserToUser: action.payload,
+    });
+  }
+  if (action.type === types.SELECTEDUSER) {
+    return Object.assign({}, state, {
+      selectedUser: action.payload,
     });
   }
   if (action.type === types.ERROR) {

@@ -1,7 +1,8 @@
 const initialState = {
   userList: [],
   loggedUser: {},
-  messFromUserToUser: [],
+  selectedUser: {},
+  messFromUserToUser: {},
   apiToken: "",
   error: "",
 };

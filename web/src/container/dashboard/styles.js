@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
   height: 100vh;
   background-color: #568d62;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1150px) {
     height: auto;
     width: auto;
   }
