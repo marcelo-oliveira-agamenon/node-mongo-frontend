@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { SearchOutlined } from "@ant-design/icons";
 import { fetchUserList, selectionUser } from "../../ducks/user";
 import Loading from "react-loading";
+import Image from "../../assets/avatar-blank.png";
 import {
   MainContainer,
   SearchBar,
@@ -77,7 +78,10 @@ function ContactComponent(props) {
               return (
                 <ListContainer key={user._id} onClick={() => handleClick(user)}>
                   <CardContact>
-                    <img src={user.imageUrl} alt="avatar" />
+                    <img
+                      src={user.imageUrl ? user.imageUrl : Image}
+                      alt="avatar"
+                    />
                     <div>
                       <h4>{user.name}</h4>
                       <p>{user.name}</p>

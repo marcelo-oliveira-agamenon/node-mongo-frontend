@@ -5,12 +5,12 @@ import { types } from "../store/reducers";
 
 //functions
 //fetch a list of messages fromUser
-export function fetchMessFromUserToUser(toUser, fromUser) {
+export function fetchMessFromUserToUser(toUser, fromUser, pagination) {
   const state = store.getState();
   const token = "Bearer " + state.apiToken;
   return function (dispatch) {
     return axios
-      .get(`${envs.API_URL}/api/converWith`, {
+      .get(`${envs.API_URL}/api/converWith/${pagination}`, {
         headers: {
           to: toUser,
           from: fromUser,

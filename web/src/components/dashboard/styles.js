@@ -133,6 +133,7 @@ export const MainContainer2 = styled.div`
 
 export const ChatBox = styled.div`
   display: flex;
+  flex-direction: column;
   height: 100%;
   max-height: 600px;
   background-color: #e5ebff;
@@ -181,15 +182,22 @@ export const MsgContainer = styled.div`
   justify-content: space-between;
   background-color: #fff;
   height: 15px;
-  width: 140px;
+  width: auto;
   padding: 12px 9px;
   border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-shadow: ${(props) =>
+    props.from === "true"
+      ? "7px -7px 15px rgb(0, 0, 0, 0.25)"
+      : "7px 0px 15px rgb(0, 0, 0, 0.25)"};
 
   h2 {
     font-family: Open Sans, sans-serif;
     font-size: 16px;
     font-weight: 500;
     align-self: center;
+    padding-right: 25px;
   }
 
   p {
@@ -197,5 +205,26 @@ export const MsgContainer = styled.div`
     font-size: 12px;
     color: #909090;
     align-self: center;
+    padding-right: 25px;
+  }
+`;
+
+export const Aux = styled.div`
+  display: flex;
+  justify-content: ${(props) =>
+    props.from === "true" ? "flex-end" : "flex-start"};
+  align-content: center;
+
+  div:nth-child(2) {
+    display: none;
+    align-self: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  :hover {
+    div:nth-child(2) {
+      display: flex;
+    }
   }
 `;

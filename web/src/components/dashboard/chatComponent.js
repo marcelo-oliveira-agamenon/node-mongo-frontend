@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { SendOutlined } from "@ant-design/icons";
+import { SendOutlined, DeleteOutlined } from "@ant-design/icons";
 import moment from "moment";
 import { fetchMessFromUserToUser, insertMsg } from "../../ducks/message";
-import { MainContainer2, ChatBox, MessageBar, MsgContainer } from "./styles";
+import {
+  MainContainer2,
+  ChatBox,
+  MessageBar,
+  MsgContainer,
+  Aux,
+} from "./styles";
 
 const mapStateToProps = (state) => {
   return {
@@ -16,10 +22,17 @@ const mapStateToProps = (state) => {
 function ChatComponent(props) {
   const [message, setMessage] = useState("");
   const [fetch, setFetch] = useState(0);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
-    props.fetchMessFromUserToUser(props.selectedUser._id, props.loggedUser._id);
-  }, [props.selectedUser, fetch]);
+    if (Object.entries(props.selectedUser).length !== 0) {
+      props.fetchMessFromUserToUser(
+        props.selectedUser._id,
+        props.loggedUser._id,
+        page
+      );
+    }
+  }, [props.selectedUser, fetch, page]);
 
   const handleMsgSend = () => {
     if (message.length === 0) {
@@ -34,8 +47,21 @@ function ChatComponent(props) {
         if (resp) {
           let cont = fetch;
           setFetch(cont + 1);
+          setMessage("");
         }
       });
+  };
+
+  const handleMessType = (mess) => {
+    if (mess.fromUser === props.loggedUser._id) {
+      return "true";
+    } else {
+      return "false";
+    }
+  };
+
+  const handleDeleteMess = (mess) => {
+    console.log(mess);
   };
 
   return (
@@ -44,12 +70,17 @@ function ChatComponent(props) {
         <ChatBox>
           {Object.entries(props.messFromUserToUser).length === 0 ? null : (
             <>
-              {props.messFromUserToUser.data.map((mess) => {
+              {props.messFromUserToUser.messages.map((mess) => {
                 return (
-                  <MsgContainer key={mess._id}>
-                    <h2>{mess.body}</h2>
-                    <p>{moment(mess.date).utc().format("HH:mm")}</p>
-                  </MsgContainer>
+                  <Aux from={handleMessType(mess)} key={mess._id}>
+                    <MsgContainer from={handleMessType(mess)}>
+                      <h2>{mess.body}</h2>
+                      <p>{moment(mess.date).utc().format("HH:mm")}</p>
+                    </MsgContainer>
+                    <div>
+                      <DeleteOutlined onClick={() => handleDeleteMess(mess)} />
+                    </div>
+                  </Aux>
                 );
               })}
             </>
